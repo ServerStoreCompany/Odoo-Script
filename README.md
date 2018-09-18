@@ -1,2 +1,2 @@
 # Odoo-Script
-Installation Odoo Script
+Installation Script for Odoo
