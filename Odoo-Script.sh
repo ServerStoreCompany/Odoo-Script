@@ -82,6 +82,9 @@ fi
 # Install Dependencies
 #--------------------------------------------
     echo -e "\n---- Install Tool Packages ----"
+sudo apt-get install software-properties-common
+sudo apt-add-repository universe
+sudo apt --fix-broken install python-pycurl python-apt
 sudo apt-get install wget subversion git bzr bzrtools python-pip python3-pip gdebi-core -y pysassc
     echo -e "\n---- Install Python Packages ----"
 sudo apt-get install python-dateutil python-feedparser python-ldap python-libxslt1 python-lxml python-mako python-openid python-psycopg2 python-pybabel python-pychart python-pydot python-pyparsing python-reportlab python-simplejson python-tz python-vatnumber python-vobject python-webdav python-werkzeug python-xlwt python-yaml python-zsi python-docutils python-psutil python-mock python-unittest2 python-jinja2 python-pypdf python-decorator python-requests python-passlib python-pil python-gpgme python-launchpadlib build-essential python-all-dev python-setuptools python-imaging python-suds python-xlsxwriter python-wheel -y
