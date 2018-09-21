@@ -22,7 +22,7 @@
 ##fixed parameters
 #odoo instead of odoo use ur user name .EG OE_USER="mahmoud"
 OE_USER="odoo"
-OE_USER2="mahmoud"
+OE_USER2="serverstore"
 
 #The default port where this Odoo instance will run under (provided you use the command -c in the terminal)
 #Set to true if you want to install it, false if you don't need it or have it already installed.
@@ -82,7 +82,8 @@ fi
 # Install Dependencies
 #--------------------------------------------
     echo -e "\n---- Install Tool Packages ----"
-sudo apt-get install software-properties-common
+sudo apt install git python3-pip build-essential wget python3-dev python3-venv python3-wheel libxslt-dev libzip-dev libldap2-dev libsasl2-dev python3-setuptools node-less -y
+sudo apt-get install software-properties-common -y
 sudo apt-add-repository universe
 sudo apt --fix-broken install python-pycurl python-apt
 sudo apt-get install wget subversion git bzr bzrtools python-pip python3-pip gdebi-core -y pysassc
@@ -142,9 +143,11 @@ sudo su - postgres -c "createuser -s $OE_USER2"
 # Install Odoo Server
 #--------------------------------------------------
     echo -e "\n---- Install Odoo Server ----"
+cd /var/lib
+mkdir odoo
 wget -O - https://nightly.odoo.com/odoo.key | apt-key add -
     echo "deb http://nightly.odoo.com/11.0/nightly/deb/ ./" >> /etc/apt/sources.list.d/odoo.list
-sudo apt-get update && apt-get install odoo
+sudo apt-get update && apt-get install odoo -y
 
 
 ##Create an isolated environment    
@@ -173,6 +176,34 @@ sudo apt-get update && apt-get install odoo
 #Whenever you want to work again with your ‘odoo-venv’ environment:
 
 #$ workon odoo-venv
+
+
+#sudo apt install git python3-pip build-essential wget python3-dev python3-venv python3-wheel libxslt-dev libzip-dev libldap2-dev libsasl2-dev python3-setuptools node-less
+
+#git clone https://www.github.com/odoo/odoo --depth 1 --branch 11.0 /opt/odoo/odoo11
+
+#cd /opt/odoo
+#python3 -m venv odoo11-venv
+#source odoo11-venv/bin/activate
+#pip3 install wheel
+#pip3 install -r odoo11/requirements.txt
+#deactivate
+#exit
+#sudo mkdir /opt/odoo/odoo11-custom-addons
+#sudo chown odoo: /opt/odoo/odoo11-custom-addons
+#sudo cp /opt/odoo/odoo11/debian/odoo.conf /etc/odoo11.conf
+#vim /etc/odoo11
+#[options]
+#; This is the password that allows database operations:
+#admin_passwd = my_admin_passwd
+#db_host = False
+#db_port = False
+#db_user = odoo
+#db_password = False
+#addons_path = /opt/odoo/odoo11/addons
+#; If you are using custom modules
+#; addons_path = /opt/odoo/odoo11/addons,/opt/odoo/odoo11-custom-addons
+
 
 
     echo "-----------------------------------------------------------"
