@@ -2,10 +2,10 @@
 # to run the script "sudo /bin/sh /Odoo\ Script.sh" or "sudo ./Odoo\ Script.sh"
 ################################################################################
 # Script for preparing Odoo developing platform on Ubuntu 14.04, 15.04, 16.04 and 18.04 (could be used for other version too)
-# Author:     Amr Mondy
-# Mobile No:  +201120241217
-# Email:      amr.mondy@zoho.com
-# Website:    https://www.facebook.com/Mondylol
+# Author:     Amr Mondy, Mohamed Zaghloul (Server-Store-Company)
+# Mobile No:  +201120241217, +201111828825
+# Email:      amr.mondy@zoho.com, muhamedzego@zoho.com & serverstore.eg@zoho.com
+# Website:    https://www.facebook.com/Mondylol & https://www.facebook.com/ServerStoreCompany
 #-------------------------------------------------------------------------------
 # This script will make ur computer ready for developing on Odoo from 8 to 11
 #-------------------------------------------------------------------------------
