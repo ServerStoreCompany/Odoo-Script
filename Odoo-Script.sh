@@ -44,8 +44,8 @@ WKHTMLTOX_X32=https://downloads.wkhtmltopdf.org/0.12/0.12.5/wkhtmltox_0.12.5-1.x
     echo -e "\n---- Update Server ----"
 sudo apt-get update
 sudo apt-get upgrade -y
-    echo -e "\n---- Add Odoo User to Server System ----"
-sudo adduser odoo
+#    echo -e "\n---- Add Odoo User to Server System ----"
+#sudo adduser odoo
     echo -e "\n---- Install Oracle Java & JDK ----"
 sudo apt-get install wget -y
 sudo apt-get install default-jre -y
@@ -62,8 +62,8 @@ sudo apt-get install oracle-java8-installer -y
 # Install Wkhtmltopdf if needed
 #--------------------------------------------------
 if [ $INSTALL_WKHTMLTOPDF = "True" ]; then
-  echo -e "\n---- Install wkhtml and place shortcuts on correct place for ODOO 9 ----"
-  #pick up correct one from x64 & x32 versions:
+  echo -e "\n---- Install wkhtml and place shortcuts on correct place for ODOO 11 ----"
+#pick up correct one from x64 & x32 versions:
   if [ "`getconf LONG_BIT`" == "64" ];then
       _url=$WKHTMLTOX_X64
   else
@@ -113,6 +113,7 @@ sudo apt install libldap2-dev libsasl2-dev
 sudo pip3 install pyldap
 sudo pip3 install num2words
 sudo pip3 install -r requirements.txt
+sudo pip install -r requirements.txt
 wget -qO- https://deb.nodesource.com/setup | bash -
     echo -e "\n---- Installing Enterprise Specific Libraries ----"
 sudo apt-get install nodejs -y
@@ -150,6 +151,8 @@ wget -O - https://nightly.odoo.com/odoo.key | apt-key add -
 sudo apt-get update && apt-get install odoo -y
 sudo pip install evdev
 sudo pip3 install evdev
+sudo pip install netifaces
+sudo pip3 install netifaces
 
 ##Create an isolated environment    
 
